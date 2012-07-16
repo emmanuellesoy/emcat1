@@ -8,5 +8,5 @@ class Demo extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file demo.php */
+/* Location: ./application/controllers/demo.php */
