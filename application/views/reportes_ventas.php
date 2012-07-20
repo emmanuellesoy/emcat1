@@ -5,4 +5,9 @@
  * and open the template in the editor.
  */
 ?>
-<input type="range" />
+<label>ELIJA LAS FECHAS DE SUS REPORTES:</label>
+<input type="date" />
+<input type="date" />
+<form>
+    <input type="submit" value="BUSCAR"/>
+</form> 

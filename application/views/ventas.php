@@ -5,13 +5,5 @@
  * and open the template in the editor.
  */
 ?>
-<section class="venta">
-    <ul>
-        <li><a href="<?php echo base_url(); ?>/views/nueva_venta.php">
-        <label>NUEVA VENTA</label>   
-        </a></li>
-        <li><a href="<?php echo base_url(); ?>/views/reportes_ventas.php">
-        <label>REPORTES DE VENTAS</label>   
-        </a></li>
-    </ul>    
-</section>
+<a href="<?php echo base_url(); ?>"><label>NUEVA VENTA</label></a>
+<a href="<?php echo base_url(); ?>"><label>REPORTE DE VENTAS</label></a>

@@ -5,14 +5,13 @@
  * and open the template in the editor.
  */
 ?>
-
+<script type="text/javascript" src="<?php echo base_url(); ?>statics/js/venta.js"></script>
     
-    <label>CODIGO DE BARRAS</label>
-    <input type="text"  />
+    <label>CODIGO DE BARRAS:</label>
+    <input type="text" id="codigo_barras" />
     <button onclick="agregar_producto()">AGREGAR</button>
-    <label>DESCUENTO</label>
-    <input type="text" value="33"/>
-    <label>%</label>
+    <label>ID O NOMBRE DEL CLIENTE:</label>
+    <input type="text" id="id_cliente"/>
 <table class="venta-productos">
     <tr>
         <td>PRODUCTO</td>
