@@ -6,12 +6,20 @@
  */
 ?>
 <form id="nuevo_producto">
-    <label>NOMBRE DEL PRODUCTO:</label>
-    <input type="text" id="nombre_producto" />
-    <label>UPC:</label>
+    <label>UPC</label>
     <input type="text" id=" upc" />
-    <label>PRECIO DEL PRODUCTO:</label>
-    <input type="text" id="precio_producto" />
+    <label>LABORATORIO:</label>
+    <input type="text" id="laboratorio_producto" />
+    <label>NOMBRE_COMERCIAL:</label>
+    <input type="text" id="nombre_producto" />
+    <label>PRINCIPÌO ACTIVO, CONC. CONCENTRACIÓN:</label>
+    <input type="text" id="principio_activo_producto" />
+    <label>FORMA FARMACEUTICA PERCENTACIÓN:</label>
+    <input type="text" id="forma_farmaceutica_producto" />
+    <label>PRECIO PUBLICO:</label>
+    <input type="text" id="precio_publico_producto" />
+    <label>PRECIO TERCERA:</label>
+    <input type="text" id="precio_tercera_producto" />
     <input type="reset" value="CANCEL" />
     <input type="submit" value="GUARDAR" />
 </form>
