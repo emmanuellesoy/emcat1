@@ -8,8 +8,8 @@
 <link rel="stylesheet" type="text/css" 
       href="<?php echo base_url(); ?>statics/css/index.css" />
 <section class="nuevo_cliente">
-    <form class="agregar_cliente">
-        <table>
+    <form class="fnuevo_cliente">
+        <table id="tnuevo_cliente">
             <tr>
                 <td><label>DATOS PARA FACTURACIÓN:</label></td>
             </tr>
@@ -83,17 +83,15 @@
                     <input type="text" id="correo_electronico" />
                 </td>
             </tr>    
-            
-            
             <tr>
                 <td>
-                    <input type="reset" value="CANCELAR" />
+                    <input type="reset" id="cancelar_formulario" value="CANCELAR" />
                 </td>
                 <td>
-                    <input type="submit" value="AGREGAR" />
+                    <input type="submit" id="bagrega_cliente" value="AGREGAR" />
                 </td>    
             </tr>
-        </table>
-    </form>
-</section>
+        </table><!-- Termina tabla[tnuevo_cliente] -->
+    </form><!-- Termina formulario[fnuevo_cliente] -->
+</section><!-- Termina sección[nuevo_cliente] -->
 
