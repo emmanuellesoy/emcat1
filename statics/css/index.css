@@ -1,0 +1,11 @@
+/* 
+    Document   : index
+    Created on : 20/07/2012, 05:37:35 PM
+    Author     : charly
+    Description:
+        Purpose of the stylesheet follows.
+*/
+td{
+    margin:10px;
+    float:right;
+}
