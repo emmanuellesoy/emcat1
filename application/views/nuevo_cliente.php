@@ -5,10 +5,8 @@
  * and open the template in the editor.
  */
 ?>
-<link rel="stylesheet" type="text/css" 
-      href="<?php echo base_url(); ?>statics/css/index.css" />
 <section class="nuevo_cliente">
-    <form class="fnuevo_cliente">
+    <form class="fnuevo_cliente" method="post" action="<?=base_url() ?>index.php/clientes/alta">
         <table id="tnuevo_cliente">
             <tr>
                 <td><label>DATOS PARA FACTURACIÓN:</label></td>
@@ -16,25 +14,25 @@
             <tr>
                 <td> 
                     <label>NOMBRE:</label>
-                    <input type="text" id="nombre_cliente"/>
+                    <input type="text" id="nombre_cliente" name="nombre_cliente" autofocus/>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>APELLIDO P:</label>
-                    <input type="text" id="apellido_p" />
+                    <input type="text" id="apellido_p" name="apellido_p" />
                 </td>
             </tr>    
             <tr>
                 <td>
                     <label>APELLIDO M:</label>    
-                    <input type="text" id="apellido_m" />
+                    <input type="text" id="apellido_m" name="apellido_m" />
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>RFC:</label>
-                    <input type="text" id="rfc" />
+                    <input type="text" id="rfc" name="rfc" />
                 </td>
             </tr>
             <tr>
@@ -43,52 +41,52 @@
             <tr>
                 <td> 
                     <label>CALLE Y NUMERO:</label>
-                    <input type="text" id="calle_numero" />
+                    <input type="text" id="calle_numero" name="calle_numero" />
                 </td>
             </tr>    
             <tr>    
                 <td>
                     <label>COLONIA:</label>
-                    <input type="text" id="colonia" />    
+                    <input type="text" id="colonia" name="colonia" />    
                 </td>
             </tr>
             <tr>   
                 <td>
                     <label>DELEGACIÓN O MUNICIPIO:</label>
-                    <input type="text" id="delegacion_municipio" />
+                    <input type="text" id="delegacion_municipio" name="delegacion_municipio" />
                 </td>
             </tr>    
             <tr>
                 <td>
                     <label>CÓDIGO POSTAL:</label>
-                    <input type="text" id="codigo_postal" />
+                    <input type="text" id="codigo_postal" name="codigo_postal" />
                 </td>
             </tr>
             
             <tr>
                 <td> 
-                    <label>PARTICULAR:</label>
-                    <input type="text" id="telefono_particular" />
+                    <label>TÉLEFONO PARTICULAR:</label>
+                    <input type="tel" id="telefono_particular" name="telefono_particular" />
                 </td>
             </tr>
             <tr>    
                 <td>
-                    <label>MÓVIL:</label>
-                    <input type="text" id="telefono-movil" />
+                    <label>TÉLEFONO MÓVIL:</label>
+                    <input type="tel" id="telefono_movil" name="telefono_movil" />
                 </td>
             </tr>
             <tr>    
                 <td>
                     <label>CORREO-E:</label>
-                    <input type="text" id="correo_electronico" />
+                    <input type="email" id="correo_e" name="correo_e" />
                 </td>
             </tr>    
             <tr>
                 <td>
-                    <input type="reset" id="cancelar_formulario" value="CANCELAR" />
+                    <input type="submit" id="agrega_cliente" value="AGREGAR" />
                 </td>
                 <td>
-                    <input type="submit" id="bagrega_cliente" value="AGREGAR" />
+                    <input type="reset" id="cancelar_formulario" value="LIMPIAR" />
                 </td>    
             </tr>
         </table><!-- Termina tabla[tnuevo_cliente] -->

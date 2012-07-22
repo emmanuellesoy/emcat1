@@ -1,42 +1,44 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Clientes extends CI_Controller {
+    
+    public function __construct() {
+        
+        parent::__construct();
+        
+        $this->load->helper('url');
+        
+    }
 
-	public function index(){
+    public function index(){
             
-                $this->load->library(array('sesiones'));
-                
-                $this->sesiones->hay_sesion();
-            
-		$this->load->view('menu_principal');
+            $this->load->view('clientes');
                 
         }
         
-        public function alta($datos){
+        public function alta(){
             
-            unset($datos);
+            $datos['nombre'] = $this->input->post('nombre_cliente');
             
-            $datos['nombre'] = 'Emmanuelle';
+            $datos['apellido_p'] = $this->input->post('apellido_p');
             
-            $datos['apellido_p'] = 'Laguna';
+            $datos['apellido_m'] = $this->input->post('apellido_m');
             
-            $datos['apellido_m'] = 'Marin';
+            $datos['calle_numero'] = $this->input->post('calle_numero');
             
-            $datos['calle_numero'] = 'Agustin Diaz 91';
+            $datos['colonia'] = $this->input->post('colonia');
             
-            $datos['colonia'] = 'La Conchita Zapotitlan';
+            $datos['delegacion_municipio'] = $this->input->post('delegacion_municipio');
             
-            $datos['delegacion_municipio'] = 'Tlahuac';
+            $datos['codigo_postal'] = $this->input->post('codigo_postal');
             
-            $datos['codigo_postal'] = '13360';
+            $datos['telefono_p'] = $this->input->post('telefono_particular');
             
-            $datos['telefono_p'] = '58665699';
+            $datos['telefono_m'] = $this->input->post('telefono_movil');
             
-            $datos['telefono_m'] = '5534187282';
+            $datos['correo_e'] = $this->input->post('correo_e');
             
-            $datos['correo_e'] = 'emmanuelle.laguna@gmail.com';
-            
-            $datos['rfc'] = 'LAME850323BK1';
+            $datos['rfc'] = $this->input->post('rfc');
             
             $this->load->model('clientes_model', 'c_m', TRUE);
             
@@ -45,6 +47,8 @@ class Clientes extends CI_Controller {
             if($alta == 1){
                 
                 echo 'El clientes ha sido dado de alta en la base de datos';
+                
+                redirect('/principal/index/clientes', 'refresh');
                 
             } else {
                 
