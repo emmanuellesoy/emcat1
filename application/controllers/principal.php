@@ -10,11 +10,13 @@ class Principal extends CI_Controller {
         
     }
 
-    public function index($seccion = NULL){
-            
-            if($seccion == NULL){
+    public function index($seccion = NULL, $datos = NULL){
+        
+            print_r($datos);
+        
+            if($seccion == NULL) {
                 
-                $data['contenido'] = 'principal';
+                $data['contenido'] = '';
                 
                 $data['seccion'] = 'Bienvenido';
                 
@@ -22,15 +24,17 @@ class Principal extends CI_Controller {
                 
             } else {
                 
-                $data['contenido'] = $this->load->view($seccion, '', TRUE);
+                $data['contenido'] = $this->load->view($seccion, $datos, TRUE);
                 
-                $data['seccion'] = '';
+                $data['seccion'] = ucwords(str_replace('_', ' ', $seccion));
                 
                 $data['title'] = ucwords(str_replace('_', ' ', $seccion));
                 
             }
             
              $data['head'] = $this->load->view('head', $data, TRUE);
+             
+             $data['footer'] = $this->load->view('barra_de_herramientas', '', TRUE);
             
             $this->load->view('menu_principal', $data);
                 

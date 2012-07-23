@@ -58,7 +58,9 @@ class Clientes extends CI_Controller {
             
         }
         
-        public function borrar($id_cliente){
+        public function borrar(){
+            
+            $id_cliente = $this->input->post('id_cliente');
             
             $this->load->model('clientes_model', 'c_m', TRUE);
             
@@ -68,13 +70,21 @@ class Clientes extends CI_Controller {
             
         }
         
-        public function buscar_clientes($id_cliente){
+        public function buscar_clientes(){
+            
+            $apellido_p = $this->input->post('apellido_p');
             
             $this->load->model('clientes_model', 'c_m', TRUE);
             
-            $borrar = $this->c_m->buscar_clientes($id_cliente);
+            $data['datos_cliente'] = $this->c_m->buscar_clientes($apellido_p);
             
-            print_r($borrar);
+            $data['title'] = 'Buscar Cliente';
+            
+            $data['footer'] = $this->load->view('barra_de_herramientas', '', TRUE);
+            
+            $data['head'] = $this->load->view('head', $data, TRUE);
+            
+            $this->load->view('lista_clientes', $data);
             
         }
                 

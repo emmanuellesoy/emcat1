@@ -1,2 +1,3 @@
-<a href="<?php echo base_url(); ?>index.php/principal/index/nuevo_cliente"><label>AGREGAR CLIENTE</label></a>
-<a href="<?php echo base_url(); ?>index.php/clientes/buscar_clientes"><label>LISTA DE CLIENTES</label></a>
+<a href="<?=base_url(); ?>index.php/principal/index/nuevo_cliente"><label>AGREGAR CLIENTE</label></a>
+<br />
+<a href="<?=base_url(); ?>index.php/principal/index/buscar_cliente"><label>BUSCAR CLIENTE</label></a>

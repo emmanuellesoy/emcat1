@@ -11,6 +11,7 @@
         <?=$head; ?>
     </head>
     <body>
+    <center>
         <section class="marco_general">
             <header class="seccion_actual">
                 <h1><?=$seccion; ?></h1>
@@ -18,9 +19,10 @@
             <section class="area_principal">
                 <?=$contenido; ?>
             </section>
-            <footer class="pie_principal">
-                <?=$vistas['herra_bar']; ?>
-            </footer><!-- Termina pie_principal[footer] -->
+            <nav class="pie_principal">
+                <?=$footer; ?>
+            </nav><!-- Termina pie_principal[footer] -->
         </section><!-- Termina marco_general[section] -->
+    </center>
     </body>
 </html>

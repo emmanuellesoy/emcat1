@@ -7,35 +7,11 @@
 ?>
 <section class="nuevo_cliente">
     <form class="fnuevo_cliente" method="post" action="<?=base_url() ?>index.php/clientes/alta">
-        <table id="tnuevo_cliente">
-            <tr>
-                <td><label>DATOS PARA FACTURACIÓN:</label></td>
-            </tr>
-            <tr>
-                <td> 
-                    <label>NOMBRE:</label>
-                    <input type="text" id="nombre_cliente" name="nombre_cliente" autofocus/>
-                </td>
-            </tr>
+        <table>
             <tr>
                 <td>
-                    <label>APELLIDO P:</label>
-                    <input type="text" id="apellido_p" name="apellido_p" />
-                </td>
-            </tr>    
-            <tr>
-                <td>
-                    <label>APELLIDO M:</label>    
-                    <input type="text" id="apellido_m" name="apellido_m" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label>RFC:</label>
-                    <input type="text" id="rfc" name="rfc" />
-                </td>
-            </tr>
-            <tr>
+                    <table>
+                    <tr>
                 <td><label>DATOS DE CONTACTO:</label></td>
             </tr>
             <tr>
@@ -90,6 +66,42 @@
                 </td>    
             </tr>
         </table><!-- Termina tabla[tnuevo_cliente] -->
+                    <!-- ****************************************************** -->
+                    
+                </td>
+                <td>
+                    <table id="tnuevo_cliente">
+            <tr>
+                <td><label>DATOS PARA FACTURACIÓN:</label></td>
+            </tr>
+            <tr>
+                <td> 
+                    <label>NOMBRE:</label>
+                    <input type="text" id="nombre_cliente" name="nombre_cliente" autofocus/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>APELLIDO P:</label>
+                    <input type="text" id="apellido_p" name="apellido_p" />
+                </td>
+            </tr>    
+            <tr>
+                <td>
+                    <label>APELLIDO M:</label>    
+                    <input type="text" id="apellido_m" name="apellido_m" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>RFC:</label>
+                    <input type="text" id="rfc" name="rfc" />
+                </td>
+            </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </form><!-- Termina formulario[fnuevo_cliente] -->
 </section><!-- Termina sección[nuevo_cliente] -->
 
