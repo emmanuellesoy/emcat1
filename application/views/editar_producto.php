@@ -1,6 +1,6 @@
-<section class="agregar_producto">
-    <form class="fagregar_producto" method="post" action="<?=base_url() ?>index.php/productos/alta">
-        <table class="tagregar_producto">
+<section class="editar_producto">
+    <form class="feditar_producto">
+        <table class="teditar_producto">
             <tr>
                 <td>
                     <label>UPC</label>
@@ -45,10 +45,11 @@
             </tr>
             <tr>
                 <td>
+                    <button type="button" id="bedidtar_cliente" 
+                            onclick="editar_cliente()">EDITAR</button><!-- llama a editar_cliente()[functión] -->
                     <input type="reset" id="cancelar_formulario" value="LIMPIAR" />
-                    <input type="submit" id="bagrega_producto" value="GUARDAR" />
-                </td>
+                </td>    
             </tr>
-        </table><!-- Termina tabla[agregar_producto] -->
-    </form><!-- Termina formulario[fagregar_producto] -->    
-</section><!-- Termina sección[agregar_producto] -->
+        </table>
+    </form>
+</section>
