@@ -12,8 +12,8 @@
         <table id="tborrar_cliente">
             <tr>
                 <td>
-                    <label>NUMERO O NOMBRE DEL CLIENTE:</label>
-                    <input type="text" id="tbuscar_cliente" />
+                    <label>NOMBRE O NUMERO DEL CLIENTE:</label>
+                    <input type="text" id="tbuscar_cliente" autofocus />
                 </td>
             </tr>
             <tr>

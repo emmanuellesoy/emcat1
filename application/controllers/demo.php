@@ -12,7 +12,7 @@ class Demo extends CI_Controller {
 
     public function index()
 	{
-		$this->load->view('editar_producto');
+		$this->load->view('reportes_ventas');
 	}
 }
 

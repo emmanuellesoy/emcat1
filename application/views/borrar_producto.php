@@ -13,7 +13,7 @@
             <tr>
                 <td>
                     <label>UPC O NOMBRE DEL PRODUCTO:</label>
-                    <input type="text" id="tbuscar_producto" />
+                    <input type="text" id="tbuscar_producto" autofocus />
                 </td>
             </tr>
             <tr>

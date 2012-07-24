@@ -6,7 +6,7 @@
  */
 ?>
 <label>ELIJA LAS FECHAS DE SUS REPORTES:</label>
-<input type="date" />
+<input type="date" autofocus/>
 <input type="date" />
 <form>
     <input type="submit" value="BUSCAR"/>
