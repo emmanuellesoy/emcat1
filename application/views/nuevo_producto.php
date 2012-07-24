@@ -1,60 +1,51 @@
-<?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-<link rel="stylesheet" type="text/css" 
-      href="<?php echo base_url(); ?>statics/css/index.css" />
 <section id="agregar_producto">
-    <form id="fagregar_producto">
+    <form class="fagregar_producto" method="post" action="<?=base_url() ?>index.php/productos/alta">
         <table id="tagregar_producto">
             <tr>
                 <td>
                     <label>UPC</label>
-                    <input type="text" id=" upc" />
+                    <input type="text" id="upc" name="upc" autofocus />
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>LABORATORIO:</label>
-                    <input type="text" id="laboratorio_producto" />
+                    <input type="text" id="laboratorio" name="laboratorio" />
                 </td>
             </tr>  
             <tr>
                 <td>
                     <label>NOMBRE_COMERCIAL:</label>
-                    <input type="text" id="nombre_producto" />
+                    <input type="text" id="nombre" name="nombre" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>PRINCIPÌO ACTIVO, CONC. CONCENTRACIÓN:</label>
-                    <input type="text" id="pactivo_producto" />
+                    <label>PRINCIPÍO ACTIVO, CONC. CONCENTRACIÓN:</label>
+                    <input type="text" id="rincipio_activo" name="principio_activo" />
                 </td>    
             </tr>
             <tr>
                 <td>
                     <label>FORMA FARMACEUTICA PERCENTACIÓN:</label>
-                    <input type="text" id="ffarmaceutica_producto" />
+                    <input type="text" id="forma_f" name="forma_f"/>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label>PRECIO PUBLICO:</label>
-                    <input type="text" id="ppublico_producto" />
+                    <input type="number" id="precio_p" name="precio_p" />
                 </td>
             </tr>
             <tr>
                 <td>               
                     <label>PRECIO TERCERA:</label>
-                    <input type="text" id="ptercera_producto" />
+                    <input type="number" id="precio_t" name="precio_t" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="reset" id="cancelar_formulario" value="CANCEL" />
+                    <input type="reset" id="cancelar_formulario" value="LIMPIAR" />
                     <input type="submit" id="bagrega_producto" value="GUARDAR" />
                 </td>
             </tr>

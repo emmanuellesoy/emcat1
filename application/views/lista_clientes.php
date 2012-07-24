@@ -1,10 +1,3 @@
-<?php
-    $vistas = array(
-        'info_bar' => '<p>Usuario</p><a href="?">Cerrar Sesión</a>',
-        'pop_up' => 'Contiene los mensajes del sistema',
-        'herra_bar' => 'Contiene la barra de herramientas',
-    );
-?>
 <!DOCTYPE html>
 <html>
     <head>

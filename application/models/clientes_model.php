@@ -80,7 +80,7 @@ class Clientes_model extends CI_Model{
     
     public function listar_clientes(){
         
-             $sql = 'SELECT id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e, rfc FROM clientes WHERE id_cliente = ?';
+             $sql = 'SELECT id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e, rfc FROM clientes';
         
     }
     
