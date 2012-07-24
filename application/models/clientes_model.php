@@ -30,15 +30,15 @@ class Clientes_model extends CI_Model{
         
     }
     
-    public function borrar($id_cliente){
+    public function borrar($dato){
         
-        $sql = 'DELETE FROM clientes WHERE id_cliente = ?';
+        $sql = 'DELETE FROM clientes WHERE (id_cliente = ? OR nombre = ?)';
         
-        $consulta = $this->db->query($sql, array($id_cliente));
+        $consulta = $this->db->query($sql, array($dato));
         
         $sql = 'SELECT id_cliente FROM clientes WHERE id_cliente = ?';
         
-        $consulta = $this->db->query($sql, array($id_cliente));
+        $consulta = $this->db->query($sql, array($dato));
         
         if($consulta->num_rows() == 0){
             
@@ -81,6 +81,14 @@ class Clientes_model extends CI_Model{
     public function listar_clientes(){
         
              $sql = 'SELECT id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e, rfc FROM clientes';
+        
+    }
+    
+    public function editar($datos){
+        
+        $sql = 'UPDATE clientes SET nombre = ?, apellido_p = ?, apellido_m = ?, calle_numero = ?, colonia = ?, delegacion_municipio = ?, codigo_postal = ?, telefono_p = ?, telefono_m = ?, correo_e = ?, rfc = ?';
+        
+        $consulta = $this->db->query($sql, array($datos['nombre_cliente'], $datos['apellido_p'], $datos['apellido_m'], $datos['calle_numero'], $datos['colonia'], $datos['delegacion_municipio'], $datos['codigo_postal'], $datos['telefono_particular'],  $datos['telefono_movil'], $datos['correo_e'], $datos['rfc']));
         
     }
     

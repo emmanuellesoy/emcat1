@@ -87,6 +87,36 @@ class Clientes extends CI_Controller {
             $this->load->view('lista_clientes', $data);
             
         }
+        
+        public function editar_cliente(){
+            
+            $this->load->model('clientes_model', 'c_m', TRUE);
+            
+            $datos['nombre_cliente'] = $this->input->post('nombre_cliente');
+            
+            $datos['apellido_p'] = $this->input->post('apellido_p');
+            
+            $datos['apellido_m'] = $this->input->post('apellido_m');
+            
+            $datos['calle_numero'] = $this->input->post('calle_numero');
+            
+            $datos['colonia'] = $this->input->post('colonia');
+            
+            $datos['delegacion_municipio'] = $this->input->post('delegacion_munucipio');
+            
+            $datos['codigo_postal'] = $this->input->post('codigo_postal');
+            
+            $datos['telefono_particular'] = $this->input->post('telefono_particular');
+            
+            $datos['telefono_movil'] = $this->input->post('telefono_movil');
+            
+            $datos['correo'] = $this->input->post('correo_e');
+            
+            $datos['efc'] = $this->input->post('rfc');
+            
+            $this->c_m->editar($datos);
+            
+        }
                 
 }
 
