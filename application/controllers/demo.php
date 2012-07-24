@@ -12,7 +12,7 @@ class Demo extends CI_Controller {
 
     public function index()
 	{
-		$this->load->view('borrar_cliente');
+		$this->load->view('editar_cliente');
 	}
 }
 

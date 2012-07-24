@@ -23,4 +23,4 @@
             </tr>    
         </table><!-- Termina tabla[tborrar_cliete] -->
     </form><!-- Termina formulario[fborrar_cliente] -->
-</secton><!-- Termina sección[borrar_cliete] -->
+</secton><!-- Termina sección[borrar_cliete] -->    
