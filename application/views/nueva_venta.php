@@ -1,12 +1,3 @@
-<?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
-<link rel="stylesheet" type="text/css" 
-      href="<?php echo base_url(); ?>statics/css/index.css" />
-<script type="text/javascript" src="<?php echo base_url(); ?>statics/js/venta.js"></script>
 <section class="venta_productos">  
     <form class="fventa_productos">
         <table class="tventa_productos"> 
@@ -19,17 +10,20 @@
              <tr>
                  <td>
                     <label>CODIGO DE BARRAS:</label>
-                    <input type="text" id="codigo_barras" autofocus />
+                    <input type="text" id="codigo_barras" name="codigo_barras" autofocus />
                  </td>
              </tr>
              <tr>
                  <td>
-                    <button id="producto_semivendido" onclick="agregar_producto()">AGREGAR</button>
+                     <input type="button" id="producto_semivendido" onclick="agregar_producto()" value ="AGREGAR"/>
                  </td>
              </tr>
         </table><!-- Termina tabla[tvender_productos] -->
         <table id="tprecio_producto">     
              <tr>
+                <td>SUBTOTAL</td>
+                <td>DESCUENTO</td>
+                <td>CANTIDAD</td>
                 <td>PRECIO</td>
                 <td>PRODUCTO</td>
              </tr>

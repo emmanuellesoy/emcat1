@@ -56,7 +56,7 @@ class Productos_model extends CI_Model{
     
     public function buscar_producto($nombre_upc){
         
-        $sql = 'SELECT upc, nombre, laboraorio, principio_activo, forma_f, precio_p, precio_t FROM productos WHERE (nombre = ? OR upc = ?)';
+        $sql = 'SELECT upc, nombre, laboratorio, principio_activo, forma_f, precio_p, precio_t FROM productos WHERE (nombre = ? OR upc = ?)';
 
         $consulta = $this->db->query($sql, array($nombre_upc, $nombre_upc));
         
@@ -73,6 +73,8 @@ class Productos_model extends CI_Model{
             $datos_producto = 0;
             
         }
+        
+        $datos_producto = json_encode($datos_producto);
         
         return $datos_producto;
         

@@ -12,8 +12,6 @@ class Principal extends CI_Controller {
 
     public function index($seccion = NULL, $datos = NULL){
         
-            print_r($datos);
-        
             if($seccion == NULL) {
                 
                 $data['contenido'] = '';

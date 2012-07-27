@@ -2,13 +2,13 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-CREATE SCHEMA IF NOT EXISTS `emcat1` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `emcat1` ;
+CREATE SCHEMA IF NOT EXISTS `a5616757_emcat1` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `a5616757_emcat1` ;
 
 -- -----------------------------------------------------
--- Table `emcat1`.`clientes`
+-- Table `a5616757_emcat1`.`clientes`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `emcat1`.`clientes` (
+CREATE  TABLE IF NOT EXISTS `a5616757_emcat1`.`clientes` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT ,
   `nombre` VARCHAR(45) NULL ,
   `apellido_p` VARCHAR(45) NULL ,
@@ -26,9 +26,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `emcat1`.`productos`
+-- Table `a5616757_emcat1`.`productos`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `emcat1`.`productos` (
+CREATE  TABLE IF NOT EXISTS `a5616757_emcat1`.`productos` (
   `id_producto` INT NOT NULL AUTO_INCREMENT ,
   `upc` VARCHAR(45) NULL ,
   `laboratorio` VARCHAR(45) NULL ,
@@ -42,9 +42,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `emcat1`.`ventas`
+-- Table `a5616757_emcat1`.`ventas`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `emcat1`.`ventas` (
+CREATE  TABLE IF NOT EXISTS `a5616757_emcat1`.`ventas` (
   `id_venta` INT NOT NULL AUTO_INCREMENT ,
   `id_cliente` INT NULL ,
   `fecha_compra` DATE NULL ,
@@ -56,21 +56,21 @@ CREATE  TABLE IF NOT EXISTS `emcat1`.`ventas` (
   INDEX `fk_ventas_clientes1` (`clientes_id_cliente` ASC) ,
   CONSTRAINT `fk_ventas_productos1`
     FOREIGN KEY (`productos_id_producto` )
-    REFERENCES `emcat1`.`productos` (`id_producto` )
+    REFERENCES `a5616757_emcat1`.`productos` (`id_producto` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ventas_clientes1`
     FOREIGN KEY (`clientes_id_cliente` )
-    REFERENCES `emcat1`.`clientes` (`id_cliente` )
+    REFERENCES `a5616757_emcat1`.`clientes` (`id_cliente` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `emcat1`.`productos_compras`
+-- Table `a5616757_emcat1`.`productos_compras`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `emcat1`.`productos_compras` (
+CREATE  TABLE IF NOT EXISTS `a5616757_emcat1`.`productos_compras` (
   `id_producto` INT NOT NULL ,
   `id_venta` INT NULL ,
   `productos_id_producto` INT NOT NULL ,
@@ -80,28 +80,28 @@ CREATE  TABLE IF NOT EXISTS `emcat1`.`productos_compras` (
   INDEX `fk_productos_compras_ventas1` (`ventas_id_venta` ASC, `ventas_productos_id_producto` ASC) ,
   CONSTRAINT `fk_productos_compras_productos1`
     FOREIGN KEY (`productos_id_producto` )
-    REFERENCES `emcat1`.`productos` (`id_producto` )
+    REFERENCES `a5616757_emcat1`.`productos` (`id_producto` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_productos_compras_ventas1`
     FOREIGN KEY (`ventas_id_venta` , `ventas_productos_id_producto` )
-    REFERENCES `emcat1`.`ventas` (`id_venta` , `productos_id_producto` )
+    REFERENCES `a5616757_emcat1`.`ventas` (`id_venta` , `productos_id_producto` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `emcat1`.`almacen`
+-- Table `a5616757_emcat1`.`almacen`
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `emcat1`.`almacen` (
+CREATE  TABLE IF NOT EXISTS `a5616757_emcat1`.`almacen` (
   `id_producto` INT NOT NULL ,
   `cantidad` INT NULL ,
   `productos_id_producto` INT NOT NULL ,
   PRIMARY KEY (`productos_id_producto`) ,
   CONSTRAINT `fk_almacen_productos`
     FOREIGN KEY (`productos_id_producto` )
-    REFERENCES `emcat1`.`productos` (`id_producto` )
+    REFERENCES `a5616757_emcat1`.`productos` (`id_producto` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
