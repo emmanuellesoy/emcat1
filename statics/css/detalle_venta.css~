@@ -1,0 +1,63 @@
+/* 
+    Document   : index
+    Created on : 20/07/2012, 05:37:35 PM
+    Author     : charly
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    /*background-color: #F26C4F;*/
+    border: 0;
+    color: #1B325F;
+}
+.seccion_actual{
+    width: 85%;
+    /*background-color: #F26C4F;*/
+}
+.area_principal{
+    width: 83%;
+    text-align: center;
+}
+.listar_clientes{
+    /*background-color: #E9F2F9;*/
+}
+.marco_general{
+    /*background-color: #F26C4F;*/
+    position: relative;
+    display: block;
+    width: 93%;
+    height: 100%;
+    margin: auto;
+    padding: 4px 4px 0px 4px;
+    border-radius: 4px;
+}
+.pie_principal{
+    position: relative;
+    /*background-color: #9CC4E4;*/
+    padding: 3px;
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    bottom: 15px;
+    
+}
+td{
+    margin:10px;
+    float:right;
+}
+a:active, a:link, a:visited{
+    text-decoration: none;
+    color: #1B325F;
+    /*background-color: #3A89C9;*/
+    width: 250px;
+    display: block;
+    text-align: center;
+    
+}
+.pie_principal li{  
+	list-style:none;
+	margin: 1px;
+	float:left;
+        top: -15px;
+}

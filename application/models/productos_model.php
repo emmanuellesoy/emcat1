@@ -74,7 +74,7 @@ class Productos_model extends CI_Model{
             
         }
         
-        $datos_producto = json_encode($datos_producto);
+        //$datos_producto = json_encode($datos_producto);
         
         return $datos_producto;
         
@@ -101,6 +101,26 @@ class Productos_model extends CI_Model{
             }
             
             return $datos_producto;
+        
+    }
+    
+    public function agregar_producto_venta($datos){
+        
+         $data = array(
+            'id_producto' => $datos['upc'],
+            'id_venta' => $datos['id_venta'],
+            'precio_producto' => $datos['precio_p'],
+            'descuento' => $datos['descuento'],
+            'cantidad' => $datos['cantidad']
+        );
+
+        $this->db->insert('productos_compras', $data); 
+        
+    }
+    
+    public function dump_sql_model($datos){
+        
+        $this->db->insert_batch('productos', $datos);
         
     }
     

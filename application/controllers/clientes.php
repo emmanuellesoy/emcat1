@@ -117,6 +117,22 @@ class Clientes extends CI_Controller {
             $this->c_m->editar($datos);
             
         }
+        
+        public function buscar_cliente($apellido_p, $id_venta){
+            
+            //$apellido_p = $this->input->post('apellido_p');
+            
+            $this->load->model('clientes_model', 'c_m', TRUE);
+            
+            $data['datos_cliente'] = $this->c_m->buscar_clientes($apellido_p);
+            
+            $this->load->model('ventas_model', 'v_m', TRUE);
+            
+            $this->v_m->agregar_cliente($data['datos_cliente']['id_cliente'], $id_venta);
+            
+            print_r(json_encode($data['datos_cliente']));
+            
+        }
                 
 }
 

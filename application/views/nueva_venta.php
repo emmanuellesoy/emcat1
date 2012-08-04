@@ -1,16 +1,22 @@
-<section class="venta_productos">  
+<?php $id_venta = $this->uri->segment(4); ?>
+<section class="venta_productos">
+    <p>Número de venta: <span id="id_venta"><?=$id_venta ?></span></p>
+    <div id="datos_cliente"></div>
     <form class="fventa_productos">
         <table class="tventa_productos"> 
              <tr>
                  <td>
+                     <input type="button" id="agregar_cliente" value="Agregar Cliente a la Venta" onclick="buscar_cliente()" />
+                 </td>
+                 <td>
                      <label>ID O NOMBRE DEL CLIENTE:</label>
-                     <input type="text" id="id_cliente"/>
+                     <input type="text" id="id_cliente_buscar" autofocus/>
                  </td>
              </tr>
              <tr>
                  <td>
                     <label>CODIGO DE BARRAS:</label>
-                    <input type="text" id="codigo_barras" name="codigo_barras" autofocus />
+                    <input type="text" id="codigo_barras" name="codigo_barras" />
                  </td>
              </tr>
              <tr>

@@ -56,9 +56,17 @@ class Clientes_model extends CI_Model{
     
     public function buscar_clientes($apellido_p){
         
-        $sql = 'SELECT id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e, rfc FROM clientes WHERE apellido_p = ?';
+        $this->db->select('id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e');
 
-        $consulta = $this->db->query($sql, array($apellido_p));
+        $this->db->where('nombre =', $apellido_p);
+
+        $this->db->or_where('id_cliente =', $apellido_p);
+        
+        $this->db->or_where('apellido_p =', $apellido_p);
+        
+        $this->db->from('clientes');
+
+        $consulta = $this->db->get();
         
         if($consulta->num_rows() > 0){
             
@@ -80,7 +88,23 @@ class Clientes_model extends CI_Model{
     
     public function listar_clientes(){
         
-             $sql = 'SELECT id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e, rfc FROM clientes';
+        $this->db->select('id_cliente, nombre, apellido_p, apellido_m');
+        
+        $this->db->from('clientes');
+        
+        $consulta = $this->db->get();
+        
+        if($consulta->num_rows() > 0){
+            
+            foreach($consulta->result_array() as $row){
+                
+                $clientes[$row['id_cliente']] = array('id_cliente' => $row['id_cliente'], 'nombre' => $row['nombre'], 'apellido_p' => $row['apellido_p'], 'apellido_m' => $row['apellido_m']);
+                
+            }
+            
+            return $clientes;
+            
+        }
         
     }
     
