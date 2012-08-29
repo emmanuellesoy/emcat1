@@ -56,9 +56,15 @@ class Productos_model extends CI_Model{
     
     public function buscar_producto($nombre_upc){
         
-        $sql = 'SELECT upc, nombre, laboratorio, principio_activo, forma_f, precio_p, precio_t FROM productos WHERE (nombre = ? OR upc = ?)';
-
-        $consulta = $this->db->query($sql, array($nombre_upc, $nombre_upc));
+        $this->db->select('*');
+        
+        $this->db->from('productos');
+        
+        $this->db->where('nombre', $nombre_upc);
+        
+        $this->db->or_where('upc', intval($nombre_upc));
+        
+        $consulta = $this->db->get();
         
         if($consulta->num_rows() > 0){
             
@@ -109,7 +115,7 @@ class Productos_model extends CI_Model{
          $data = array(
             'id_producto' => $datos['upc'],
             'id_venta' => $datos['id_venta'],
-            'precio_producto' => $datos['precio_p'],
+            'precio_p' => $datos['precio_p'],
             'descuento' => $datos['descuento'],
             'cantidad' => $datos['cantidad']
         );

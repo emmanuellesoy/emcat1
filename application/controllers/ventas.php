@@ -6,7 +6,7 @@ class Ventas extends CI_Controller {
         
         parent::__construct();
         
-        $this->load->helper('url');
+        $this->load->helper(array('url', 'file'));
         
         $this->load->helper('date');
         
@@ -14,15 +14,15 @@ class Ventas extends CI_Controller {
 
     public function agregar_producto($nombre_upc){
         
-        $this->load->model('productos_model', 'p_m', TRUE);
+        $this->load->model('productos_model', 'p_m');
         
         $datos = $this->p_m->buscar_producto($nombre_upc);
         
-        $datos['id_venta'] = $this->input->get('id_venta');
+        $datos['id_venta'] = $this->input->post('id_venta');
         
-        $datos['descuento'] = $this->input->get('descuento');
+        $datos['descuento'] = $this->input->post('descuento');
         
-        $datos['cantidad'] = $this->input->get('cantidad');
+        $datos['cantidad'] = $this->input->post('cantidad');
         
         $this->p_m->agregar_producto_venta($datos);
         
@@ -70,9 +70,11 @@ class Ventas extends CI_Controller {
     
     public function ventas_detalle(){
         
-        $this->load->model('ventas_model', 'v_m', TRUE);
+        $datos['numeroDeVenta'] = $this->input->post('numero_venta');
         
-        $datos['productos'] = $this->v_m->detalles($this->input->post('numero_venta'));
+        $this->load->model(array('ventas_model', 'clientes_model'));
+        
+        $datos['productos'] = $this->ventas_model->detalles($datos['numeroDeVenta']);
         
         $datos['title'] = 'Detalle Venta';
             

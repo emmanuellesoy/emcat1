@@ -80,9 +80,23 @@ class Ventas_model extends CI_Model{
             
             foreach($consulta->result_array() as $row){
                 
-                $ventas[]= array('id_venta' => $row['id_venta'], 'id_cliente' => $row['id_cliente']);
+                if(!isset($row['id_cliente'])){
+                    
+                    $id_cliente = 0;
+                    
+                } else {
+                    
+                    $id_cliente = $row['id_cliente'];
+                    
+                }
+                
+                $ventas[]= array('id_venta' => $row['id_venta'], 'id_cliente' => $id_cliente);
                 
             }
+            
+        } else {
+            
+            $ventas['mostrador'] = 'Venta de mostrador';
             
         }
         
@@ -94,7 +108,48 @@ class Ventas_model extends CI_Model{
     
     public function detalles($id_venta){
         
-        $this->db->select('id_producto, precio_producto, descuento, cantidad');
+        /********Datos venta******************/
+        
+        $this->db->select('*');
+        
+        $this->db->from('ventas');
+        
+        $this->db->where('id_venta', $id_venta);
+        
+        $consulta = $this->db->get();
+        
+        if($consulta->num_rows() > 0){
+            
+            foreach($consulta->result_array() as $row){
+                
+                $productos['venta'] = $row; 
+                
+            }
+            
+        }
+        /******************Datos cliente****************/
+        
+        $this->db->select('*');
+        
+        $this->db->from('clientes');
+        
+        $this->db->where('id_cliente', $productos['venta']['id_cliente']);
+        
+        $consulta = $this->db->get();
+        
+        if($consulta->num_rows() > 0){
+            
+            foreach($consulta->result_array() as $row){
+                
+                $productos['cliente'] = $row; 
+                
+            }
+            
+        }
+        
+        /**********Datos productos************************/
+        
+        $this->db->select('*');
         
         $this->db->from('productos_compras');
         
@@ -102,22 +157,19 @@ class Ventas_model extends CI_Model{
         
         $consulta = $this->db->get();
         
-        //echo $this->db->last_query();
         
         if($consulta->num_rows() > 0){
             
             foreach($consulta->result_array() as $row){
                 
-                $productos[] = $row; 
+                $productos['detalles'][] = $row; 
                 
             }
             
-            return $productos;
         }
-        
+     
+        return $productos;
     }
-    
-    
     
 }
     

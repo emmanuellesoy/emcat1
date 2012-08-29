@@ -19,7 +19,7 @@
                     <tr>
                         <form action="<?=base_url(); ?>index.php/ventas/ventas_detalle" method="post">
                         <td><?=$venta['id_venta']; ?></td>
-                        <td><?=$clientes[$venta['id_cliente']]['nombre'].' '.$clientes[$venta['id_cliente']]['apellido_p'].' '.$clientes[$venta['id_cliente']]['apellido_m']; ?><td>
+                        <td><?=($venta['id_cliente'] != 0) ? $clientes[$venta['id_cliente']]['nombre'].' '.$clientes[$venta['id_cliente']]['apellido_p'].' '.$clientes[$venta['id_cliente']]['apellido_m'] : 'Venta de mostrador' ; ?><td>
                             <td><input type="text" id="numero_venta" name="numero_venta" hidden="hidden" value="<?=$venta['id_venta']; ?>" /></td>
                         <td><input type="submit" value="Ver detalle" /></td>
                         </form>

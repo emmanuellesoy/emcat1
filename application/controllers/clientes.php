@@ -112,7 +112,7 @@ class Clientes extends CI_Controller {
             
             $datos['correo'] = $this->input->post('correo_e');
             
-            $datos['efc'] = $this->input->post('rfc');
+            $datos['rfc'] = $this->input->post('rfc');
             
             $this->c_m->editar($datos);
             

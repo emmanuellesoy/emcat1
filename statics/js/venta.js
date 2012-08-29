@@ -15,13 +15,15 @@ function agregar_producto(){
     
     var uri = base+'index.php/ventas/agregar_producto/'+upc;
     
-    /*alert(uri);*/
+    alert(uri);
     
     $.ajax({
 
         url: uri,
         
         data: 'descuento='+desc+'&cantidad='+cant+'&id_venta='+id_venta,
+        
+        type: 'post',
         
         success: function(data){
         

@@ -56,7 +56,7 @@ class Clientes_model extends CI_Model{
     
     public function buscar_clientes($apellido_p){
         
-        $this->db->select('id_cliente, nombre, apellido_p, apellido_m, calle_numero, colonia, delegacion_municipio, codigo_postal, telefono_p, telefono_m, correo_e');
+        $this->db->select('*');
 
         $this->db->where('nombre =', $apellido_p);
 
