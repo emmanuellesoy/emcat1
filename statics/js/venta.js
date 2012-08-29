@@ -15,7 +15,7 @@ function agregar_producto(){
     
     var uri = base+'index.php/ventas/agregar_producto/'+upc;
     
-    alert(uri);
+    //alert(uri);
     
     $.ajax({
 
