@@ -17,21 +17,17 @@
             </header><!-- Termina seccion_actual[header] -->
             <section class="area_principal listar_productos">
                 <table>
-                    <?php $es_non = 1;?>
-                    <?php foreach ($productos as $producto): ?>
+                    <tr><td>No. Cliente</td><td>Nombre del cliente</td></tr>
+                    <?php $es_non = 0;?>
+                    <?php foreach ($clientes as $cliente): ?>
                     <?php
                         $non = $es_non%2;
                         $es_par = ($non == 0) ? 'par' : 'non';
                         $es_non++;
                     ?>
                         <tr class="<?=$es_par; ?>">
-                            <td><?=$producto['precio_t']; ?></td>
-                            <td><?=$producto['precio_p']; ?></td>
-                            <td><?=$producto['forma_f']; ?></td>
-                            <td><?=$producto['principio_activo']; ?></td>
-                            <td><?=$producto['laboratorio']; ?></td>
-                            <td><?=$producto['nombre']; ?></td>
-                            <td><?=$producto['upc']; ?></td>
+                            <td><?=$cliente['id_cliente'] ?></td>
+                            <td><?=$cliente['nombre'].' '.$cliente['apellido_p'].' '.$cliente['apellido_m']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

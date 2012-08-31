@@ -74,7 +74,7 @@ class Clientes extends CI_Controller {
             
             $apellido_p = $this->input->post('apellido_p');
             
-            $this->load->model('clientes_model', 'c_m', TRUE);
+            $this->load->model('clientes_model', 'c_m');
             
             $data['datos_cliente'] = $this->c_m->buscar_clientes($apellido_p);
             
@@ -85,6 +85,22 @@ class Clientes extends CI_Controller {
             $data['head'] = $this->load->view('head', $data, TRUE);
             
             $this->load->view('lista_clientes', $data);
+            
+        }
+        
+        public function listado_clientes(){
+            
+            $this->load->model('clientes_model', 'c_m');
+            
+            $data['clientes'] = $this->c_m->listar_clientes();
+            
+            $data['title'] = 'Lista de clientes';
+            
+            $data['footer'] = $this->load->view('barra_de_herramientas', '', TRUE);
+            
+            $data['head'] = $this->load->view('head', $data, TRUE);
+            
+            $this->load->view('listado_clientes', $data);
             
         }
         

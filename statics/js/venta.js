@@ -7,7 +7,7 @@ function agregar_producto(){
     
     var upc = $('#codigo_barras').val();
 
-    var cant = prompt("cantidad");
+    var cant = prompt("cantidad", "1");
         
     var desc = prompt("descuento", "20");
     

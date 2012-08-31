@@ -58,11 +58,7 @@ class Clientes_model extends CI_Model{
         
         $this->db->select('*');
 
-        $this->db->where('nombre =', $apellido_p);
-
-        $this->db->or_where('id_cliente =', $apellido_p);
-        
-        $this->db->or_where('apellido_p =', $apellido_p);
+        $this->db->where('id_cliente =', $apellido_p);
         
         $this->db->from('clientes');
 
