@@ -18,7 +18,7 @@ class Ventas extends CI_Controller {
         
         $datos = $this->p_m->buscar_producto($nombre_upc);
         
-        $id_producto = $datos['id_venta'];
+        $id_producto = $datos['id_producto'];
         
         $precio_p = $datos['precio_p'];
         
