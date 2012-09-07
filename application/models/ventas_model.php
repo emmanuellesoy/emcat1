@@ -153,10 +153,13 @@ class Ventas_model extends CI_Model{
         
         $this->db->from('productos_compras');
         
+        $this->db->join('productos', 'productos.id_producto = productos_compras.id_producto', 'left');
+        
         $this->db->where('id_venta', $id_venta);
         
         $consulta = $this->db->get();
         
+        //echo $this->db->last_query();
         
         if($consulta->num_rows() > 0){
             

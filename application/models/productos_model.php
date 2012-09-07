@@ -110,14 +110,14 @@ class Productos_model extends CI_Model{
         
     }
     
-    public function agregar_producto_venta($datos){
+    public function agregar_producto_venta($id_producto, $id_venta, $descuento, $cantidad, $precio_p){
         
          $data = array(
-            'id_producto' => $datos['upc'],
-            'id_venta' => $datos['id_venta'],
-            'precio_p' => $datos['precio_p'],
-            'descuento' => $datos['descuento'],
-            'cantidad' => $datos['cantidad']
+            'id_producto' => $id_producto,
+            'id_venta' => $id_venta,
+            'precio_p' => $precio_p,
+            'descuento' => $descuento,
+            'cantidad' => $cantidad
         );
 
         $this->db->insert('productos_compras', $data); 

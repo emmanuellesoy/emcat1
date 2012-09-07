@@ -18,13 +18,17 @@ class Ventas extends CI_Controller {
         
         $datos = $this->p_m->buscar_producto($nombre_upc);
         
-        $datos['id_venta'] = $this->input->post('id_venta');
+        $id_producto = $datos['id_venta'];
         
-        $datos['descuento'] = $this->input->post('descuento');
+        $precio_p = $datos['precio_p'];
         
-        $datos['cantidad'] = $this->input->post('cantidad');
+        $id_venta = $this->input->post('id_venta');
         
-        $this->p_m->agregar_producto_venta($datos);
+        $descuento = $this->input->post('descuento');
+        
+        $cantidad = $this->input->post('cantidad');
+        
+        $this->p_m->agregar_producto_venta($id_producto, $id_venta, $descuento, $cantidad, $precio_p);
         
         print_r(json_encode($datos));
         

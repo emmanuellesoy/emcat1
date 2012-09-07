@@ -57,8 +57,8 @@
                         <?php foreach ($productos['detalles'] as $detalle): ?>
                             <tr>
                                 <td><?php print_r($detalle['cantidad']); ?></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php print_r($detalle['nombre']); ?></td>
+                                <td><?php print_r($detalle['laboratorio']); ?></td>
                                 <td><?php print_r($detalle['precio_p']); ?></td>
                                 <td><?php print_r($detalle['descuento']); ?></td>
                                 <td><?php print_r($detalle['precio_p']); ?></td>
