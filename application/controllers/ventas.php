@@ -10,6 +10,8 @@ class Ventas extends CI_Controller {
         
         $this->load->helper('date');
         
+        $this->load->model(array('ventas_model', 'clientes_model'));
+        
     }
 
     public function agregar_producto($nombre_upc){
@@ -18,6 +20,8 @@ class Ventas extends CI_Controller {
         
         $datos = $this->p_m->buscar_producto($nombre_upc);
         
+        //print_r($datos);
+
         $id_producto = $datos['id_producto'];
         
         $precio_p = $datos['precio_p'];
@@ -72,11 +76,17 @@ class Ventas extends CI_Controller {
         
     }
     
-    public function ventas_detalle(){
+    public function ventas_detalle($venta_id = 0){
         
-        $datos['numeroDeVenta'] = $this->input->post('numero_venta');
-        
-        $this->load->model(array('ventas_model', 'clientes_model'));
+        if($venta_id != 0){
+            
+            $datos['numeroDeVenta'] = $this->input->post('numero_venta');
+            
+        } else {
+            
+            $datos['numeroDeVenta'] = $venta_id;
+            
+        }
         
         $datos['productos'] = $this->ventas_model->detalles($datos['numeroDeVenta']);
         
@@ -87,6 +97,16 @@ class Ventas extends CI_Controller {
         $datos['head'] = $this->load->view('head', $datos, TRUE);
         
         $this->load->view('detalles', $datos);
+        
+    }
+    
+    public function borrar_un_producto(){
+        
+        $datos['id_producto'] = $this->input->post('id_producto');
+        
+        $datos['id_venta'] = $this->input->post('id_venta');
+        
+        $this->ventas_model->borrar_producto($datos);
         
     }
                 

@@ -1,5 +1,5 @@
 <section class="agregar_producto">
-    <form class="fagregar_producto" method="post" action="<?=base_url() ?>index.php/productos/alta">
+    <form class="fagregar_producto" method="post" action="<?=base_url() ?>index.php/productos/alta/alta_p">
         <table class="tagregar_producto">
             <tr>
                 <td>

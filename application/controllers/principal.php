@@ -21,10 +21,26 @@ class Principal extends CI_Controller {
             $data['title'] = 'Bienvenido';
 
         } else {
+            
+            if(($seccion == 'editar_producto') && (isset($_POST['upc_buscar']))){
+                
+                $this->load->model('productos_model');
+                
+                $datos['datos_productos'] = $this->productos_model->buscar_producto($_POST['upc_buscar']);
+                
+            }
 
             $data['contenido'] = $this->load->view($seccion, $datos, TRUE);
 
-            $data['seccion'] = ucwords(str_replace('_', ' ', $seccion));
+            if(isset($datos) && $datos = 'alta_p'){
+                
+                $data['seccion'] = ucwords(str_replace('_', ' ', $seccion)).'<br /> Producto registrado';
+                
+            } else {
+                
+                $data['seccion'] = ucwords(str_replace('_', ' ', $seccion));
+                
+            }
 
             $data['title'] = ucwords(str_replace('_', ' ', $seccion));
 

@@ -10,13 +10,14 @@
                 <h1>Datos Cliente</h1>
             </header><!-- Termina seccion_actual[header] -->
             <section class="area_principal listar_clientes">
+                <section id="mensaje" /></section>
                 <section class="editar_cliente">
                     <form class="feditar_cliente">
                         <table class="teditarcliente">
                             <tr>
                                 <td>
                                     <label>NOMBRE:</label>
-                                    <input type="text" id="nombre_cliente" name="nombre_cliente" value="<?=$datos_cliente['nombre']; ?>" autofocus/>
+                                    <input type="text" id="nombre_cliente" name="nombre" value="<?=$datos_cliente['nombre']; ?>" autofocus/>
                                 </td>    
                             </tr>
                             <tr>
@@ -59,13 +60,13 @@
                             <tr>
                                 <td> 
                                     <label>TÉLEFONO PARTICULAR:</label>
-                                    <input type="tel" id="telefono_particular" name="telefono_particular" value="<?=$datos_cliente['telefono_p']; ?>" />
+                                    <input type="tel" id="telefono_particular" name="telefono_p" value="<?=$datos_cliente['telefono_p']; ?>" />
                                 </td>
                             </tr>
                             <tr>    
                                 <td>
                                     <label>TÉLEFONO MÓVIL:</label>
-                                    <input type="tel" id="telefono_movil" name="telefono_movil" value="<?=$datos_cliente['telefono_m']; ?>" />
+                                    <input type="tel" id="telefono_movil" name="telefono_m" value="<?=$datos_cliente['telefono_m']; ?>" />
                                 </td>
                             </tr>
                             <tr>    
@@ -83,7 +84,7 @@
                             <tr>
                                 <td>
                                     <button type="button" id="bedidtar_cliente" 
-                                            onclick="editar_cliente()">EDITAR</button><!-- Aquí se llama a editar_cliente()[functión] -->
+                                            onclick="editar_cliente('<?=$datos_cliente['id_cliente']; ?>')">EDITAR</button><!-- Aquí se llama a editar_cliente()[functión] -->
                                     <input type="reset" id="cancelar_formulario" value="LIMPIAR" />
                                 </td>    
                             </tr>

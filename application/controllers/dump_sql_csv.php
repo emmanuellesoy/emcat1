@@ -29,13 +29,13 @@ class Dump_sql_csv extends CI_Controller {
             //echo '</pre>';
             
             $query[] = array(
-                'laboratorio' => $obtener_datos[0],
-                'nombre' => $obtener_datos[1],
-                'principio_activo' => $obtener_datos[2],
-                'forma_f' => $obtener_datos[3],
-                'precio_p' => $obtener_datos[4],
-                'precio_t' => $obtener_datos[5],
-                'upc' => $obtener_datos[6]
+                'laboratorio' => trim($obtener_datos[0]),
+                'nombre' => trim($obtener_datos[1]),
+                'principio_activo' => trim($obtener_datos[2]),
+                'forma_f' => trim($obtener_datos[3]),
+                'precio_p' => trim($obtener_datos[4]),
+                'precio_t' => trim($obtener_datos[5]),
+                'upc' => trim($obtener_datos[6])
             );
             
         }

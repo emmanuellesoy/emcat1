@@ -54,11 +54,11 @@ class Clientes_model extends CI_Model{
         
     }
     
-    public function buscar_clientes($apellido_p){
+    public function buscar_clientes($cliente_id){
         
         $this->db->select('*');
 
-        $this->db->where('id_cliente =', $apellido_p);
+        $this->db->where('id_cliente =', $cliente_id);
         
         $this->db->from('clientes');
 
@@ -74,7 +74,7 @@ class Clientes_model extends CI_Model{
             
         } else {
             
-            $datos_cliente = 0;
+            $datos_cliente = 'Venta de mostrador';
             
         }
         
@@ -105,10 +105,10 @@ class Clientes_model extends CI_Model{
     }
     
     public function editar($datos){
+
+        $this->db->where('id_cliente', $datos['id_cliente']);
         
-        $sql = 'UPDATE clientes SET nombre = ?, apellido_p = ?, apellido_m = ?, calle_numero = ?, colonia = ?, delegacion_municipio = ?, codigo_postal = ?, telefono_p = ?, telefono_m = ?, correo_e = ?, rfc = ?';
-        
-        $consulta = $this->db->query($sql, array($datos['nombre_cliente'], $datos['apellido_p'], $datos['apellido_m'], $datos['calle_numero'], $datos['colonia'], $datos['delegacion_municipio'], $datos['codigo_postal'], $datos['telefono_particular'],  $datos['telefono_movil'], $datos['correo_e'], $datos['rfc']));
+        $this->db->update('clientes', $datos); 
         
     }
     

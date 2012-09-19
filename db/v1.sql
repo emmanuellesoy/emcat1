@@ -6,6 +6,8 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 -- -----------------------------------------------------
 -- Table `emcat1`.`clientes`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `emcat1`.`clientes` ;
+
 CREATE  TABLE IF NOT EXISTS `emcat1`.`clientes` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT ,
   `nombre` VARCHAR(45) NULL ,
@@ -26,6 +28,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `emcat1`.`productos`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `emcat1`.`productos` ;
+
 CREATE  TABLE IF NOT EXISTS `emcat1`.`productos` (
   `id_producto` INT NOT NULL AUTO_INCREMENT ,
   `upc` VARCHAR(45) NULL ,
@@ -42,6 +46,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `emcat1`.`ventas`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `emcat1`.`ventas` ;
+
 CREATE  TABLE IF NOT EXISTS `emcat1`.`ventas` (
   `id_venta` INT NOT NULL AUTO_INCREMENT ,
   `id_cliente` INT NULL ,
@@ -54,15 +60,22 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `emcat1`.`productos_compras`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `emcat1`.`productos_compras` ;
+
 CREATE  TABLE IF NOT EXISTS `emcat1`.`productos_compras` (
   `id_producto` INT NOT NULL ,
-  `id_venta` INT NULL )
+  `id_venta` INT NULL ,
+  `precio_p` DECIMAL(4) NULL ,
+  `descuento` INT NULL ,
+  `cantidad` INT NULL )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `emcat1`.`almacen`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `emcat1`.`almacen` ;
+
 CREATE  TABLE IF NOT EXISTS `emcat1`.`almacen` (
   `id_producto` INT NOT NULL ,
   `cantidad` INT NULL )

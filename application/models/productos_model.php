@@ -32,7 +32,7 @@ class Productos_model extends CI_Model{
     
     public function borrar($upc){
         
-        $sql = 'DELETE FROM productos WHERE upc = ?';
+        $sql = 'DELETE FROM productos WHERE id_producto = ?';
         
         $consulta = $this->db->query($sql, array($upc));
         
@@ -87,10 +87,8 @@ class Productos_model extends CI_Model{
     }
     
     public function listar_productos(){
-        
-             $sql = 'SELECT id_producto, upc, nombre, laboratorio, principio_activo, forma_f, precio_p, precio_t FROM productos ORDER BY nombre';
              
-             $consulta = $this->db->query($sql);
+            $consulta = $this->db->select('*')->from('productos')->order_by('nombre')->get();
              
              if($consulta->num_rows() > 0){
             
@@ -127,6 +125,14 @@ class Productos_model extends CI_Model{
     public function dump_sql_model($datos){
         
         $this->db->insert_batch('productos', $datos);
+        
+    }
+    
+    public function editar_productos($datos){
+        
+        $this->db->where('id_producto', $datos['id_producto']);
+        
+        $this->db->update('productos', $datos);
         
     }
     

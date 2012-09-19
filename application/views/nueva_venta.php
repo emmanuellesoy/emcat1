@@ -2,14 +2,14 @@
 <section class="venta_productos">
     <p>Número de venta: <span id="id_venta"><?=$id_venta ?></span></p>
     <div id="datos_cliente"></div>
-    <form class="fventa_productos">
+    <form class="fventa_productos" action ="<?=base_url(); ?>index.php/ventas/ventas_detalle/<?=$id_venta; ?>" method="post">
         <table class="tventa_productos"> 
              <tr>
                  <td>
                      <input type="button" id="agregar_cliente" value="Agregar Cliente a la Venta" onclick="buscar_cliente()" />
                  </td>
                  <td>
-                     <label>ID O NOMBRE DEL CLIENTE:</label>
+                     <label>Número del cliente</label>
                      <input type="text" id="id_cliente_buscar" autofocus/>
                  </td>
              </tr>
@@ -40,7 +40,7 @@
         <table id="tventa_productos">    
              <tr>
                 <td><input type="submit" id="vender" value="VENDER"/></td>
-                <td><input type="submit" id="cancelar_venta" value="CANCELAR" /></td>
+                <td><input type="reset" id="cancelar_venta" value="CANCELAR" /></td>
              </tr>
         </table><!-- Termina tabla[tventa_productos] -->
     </form><!-- Termina formulario[fventa_productos] -->

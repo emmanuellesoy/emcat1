@@ -17,6 +17,15 @@
             </header><!-- Termina seccion_actual[header] -->
             <section class="area_principal listar_productos">
                 <table>
+                    <tr>
+                        <td>Código de barras</td>
+                        <td>Nombre</td>
+                        <td>Laboratorio</td>
+                        <td>Precio Tercera</td>
+                        <td>Precio Público</td>
+                        <td></td>
+                        <td>Principio Activo</td>
+                    </tr>
                     <?php $es_non = 1;?>
                     <?php foreach ($productos as $producto): ?>
                     <?php
@@ -24,14 +33,15 @@
                         $es_par = ($non == 0) ? 'par' : 'non';
                         $es_non++;
                     ?>
-                        <tr class="<?=$es_par; ?>">
+                        <tr id="<?=$producto['id_producto']; ?>" class="<?=$es_par; ?>">
+                            <td><?=$producto['upc']; ?></td>
+                            <td><?=$producto['nombre']; ?></td>
+                            <td><?=$producto['laboratorio']; ?></td>
                             <td><?=$producto['precio_t']; ?></td>
                             <td><?=$producto['precio_p']; ?></td>
                             <td><?=$producto['forma_f']; ?></td>
                             <td><?=$producto['principio_activo']; ?></td>
-                            <td><?=$producto['laboratorio']; ?></td>
-                            <td><?=$producto['nombre']; ?></td>
-                            <td><?=$producto['upc']; ?></td>
+                            <td onclick="eliminar_producto('<?=$producto['id_producto']; ?>')">[X]</td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

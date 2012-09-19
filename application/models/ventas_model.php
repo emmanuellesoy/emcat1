@@ -174,6 +174,18 @@ class Ventas_model extends CI_Model{
         return $productos;
     }
     
+    public function borrar_producto($datos){
+        
+        $this->db->where('id_producto', $datos['id_producto']);
+        
+        $this->db->where('id_venta', $datos['id_venta']);
+        
+        $this->db->delete('productos_compras');
+        
+        print_r($this->db->last_query());
+        
+    }
+    
 }
     
 ?>

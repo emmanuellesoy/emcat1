@@ -40,7 +40,7 @@ class Productos extends CI_Controller {
                 
                 echo 'El producto ha sido dado de alta en la base de datos';
                 
-                redirect('/principal/index/productos', 'refresh');
+                redirect('/principal/index/productos/alta_p', 'refresh');
                 
             } else {
                 
@@ -52,11 +52,11 @@ class Productos extends CI_Controller {
         
         public function borrar(){
             
-            $upc = $this->input->post('upc');
+            $id_producto = $this->input->post('id_producto');
             
             $this->load->model('productos_model', 'p_m', TRUE);
             
-            $borrar = $this->p_m->borrar($upc);
+            $borrar = $this->p_m->borrar($id_producto);
             
             echo $borrar;
             
@@ -93,6 +93,22 @@ class Productos extends CI_Controller {
             $data['head'] = $this->load->view('head', $data, TRUE);
             
             $this->load->view('lista_productos', $data);
+            
+        }
+        
+        public function editar_producto(){
+            
+            foreach($_POST as $key => $value){
+                
+                $datos[$key] = $value;
+                
+            }
+            
+            print_r($datos);
+            
+            $this->load->model('productos_model');
+            
+            $this->productos_model->editar_productos($datos);
             
         }
                 

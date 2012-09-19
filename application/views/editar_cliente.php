@@ -1,5 +1,6 @@
 <section class="editar_cliente">
-    <form class="feditar_cliente">
+    <form class="feditar_cliente" id="editar_cliente">
+        ldfskd dfsk fdskldfskd dfsk fdskldfskd dfsk fdskldfskd dfsk fdsk
         <table class="teditarcliente">
             <tr>
                 <td>
@@ -71,7 +72,7 @@
             <tr>
                 <td>
                     <button type="button" id="bedidtar_cliente" 
-                            onclick="editar_cliente()">EDITAR</button><!-- llama a editar_cliente()[functión] -->
+                            onclick="editar_cliente(1)">EDITAR</button><!-- llama a editar_cliente()[functión] -->
                     <input type="reset" id="cancelar_formulario" value="LIMPIAR" />
                 </td>    
             </tr>
